@@ -1,0 +1,23 @@
+# IE2102 Network Programming Assignment
+# Student  : IT24102161
+# Makefile : Makefile_2161
+# Build    : make -f Makefile_2161
+
+CC      = gcc
+CFLAGS  = -Wall -Wextra -g
+TARGET  = server_2161
+SRC     = server_2161.c
+
+.PHONY: all clean run
+
+all: $(TARGET)
+
+$(TARGET): $(SRC)
+	$(CC) $(CFLAGS) -o $(TARGET) $(SRC)
+	@echo "Build successful: ./$(TARGET)"
+
+clean:
+	rm -f $(TARGET)
+
+run: all
+	./$(TARGET)
